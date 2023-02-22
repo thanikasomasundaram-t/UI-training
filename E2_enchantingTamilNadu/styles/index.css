@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(40, 40, 40);
+}
+
+h1 {
+    padding: 55px;
+    background-color: #3d163c;
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.5em;
+}
+
+img {
+    width: 100%;
+}
+
+.image {
+    margin-bottom: 80px;
+}
+
+.section {
+    width: 90%;
+    margin: auto;
+}
+
+.article {
+    display: inline-block;
+    width: 31%;
+    margin: 0 0px 105px 25px;
+}
+
+.article > .heading {
+    font-weight: 300;
+    font-size: 2.25em;
+    padding: 12px 0;
+}
+
+.article > h6 {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.article > p {
+    font-weight: 300;
+    font-size: 1.2em;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline;
+    background-color: #702053;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.description-heading {
+    text-align: center;
+    font-weight: 300;
+    font-size: 4.5em;
+    margin: 50px;
+    color: #702053;
+}
+
+.description {
+    width: 74%;
+    margin: auto;
+    font-weight: lighter;
+    font-size: 1.85em;
+    text-align: justify;
+    margin-bottom: 95px;
+}
+
+.footer {
+    padding: 30px;
+    background-color: #702053;
+    padding-left: 110px;
+}
+
+.footer > h5 {
+    color: white;
+    background-color: #702053;
+    text-align: left;
+    font-weight: 800;
+    font-size: 1.5em;
+    
+}
+
+.footer >  h6 {
+    background-color: #702053;
+    color: white;
+    font-size: 1.3em;
+    font-weight: lighter;
+}
