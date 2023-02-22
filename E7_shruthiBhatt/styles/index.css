@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+/* START - MAIN */
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+/* START - HEADER */
+
+header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    height: 580px;
+
+}
+
+.email-id {
+    display: flex;
+    width: 90%;
+    justify-content: end;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 48%;
+}
+
+header h1 {
+    font-size: 11em;
+    font-weight: lighter;
+    transform: scale(0.9, 1.1);
+}
+
+h1 span {
+    font-weight: 600;
+}
+
+header h4 {
+    font-size: 3em;
+    transform: scale(0.9, 1.1);
+    /* margin-top: -20px; */
+}
+
+/* END - HEADER */
+
+/* START - CARD */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.card {
+    display: flex;
+    width: 31.5%;
+    justify-content: center;
+    background-color: grey;
+    margin-bottom: 40px;
+}
+/* END - CARD */
+
+.partners {
+    display: flex;
+    flex-direction: column;
+}
+
+.partners h2 {
+    font-size: 3rem;
+    transform: scale(0.9, 1.1);
+}
+
+/* END - MAIN */
+
+@media only screen and (max-width: 1650px) {
+    main {
+        font-size: 10px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
