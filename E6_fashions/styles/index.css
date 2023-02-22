@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: rgb(42, 43, 48);
+}
+
+/* START - HEADER */
+header {
+    width: 86%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.cmpy-logo {
+    position: absolute;
+    width: 10%;
+    padding-top: 10px;
+}
+
+.cmpy-logo h1 {
+    font-family: "cellion";
+    font-size: 3.5em;
+    color: #87b181;
+}
+
+.cmpy-logo span {
+    font-family: "cellion";
+    color: #c9828f;
+}
+
+/* START - PROFILE */
+
+.profile {
+    width: 70px;
+    margin: 7px 0px 0px auto;
+    padding-bottom: 10px;
+}
+
+.profile-icon {
+    height: 70px;
+    border: solid;
+    border-radius: 50%;
+    background-color: #d8d8d8;
+}
+
+.drop-down {
+    position: absolute;
+    display: none;
+    right: 7%;
+    width: 220px;
+    border: solid;
+    margin-top: 10px;
+    padding: 10px 10px 10px 20px;
+}
+
+.drop-down a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0; 
+    color: black;
+    font-weight: 600;
+
+}
+
+.profile:hover .drop-down {
+    display: block;
+    background-color: white;
+    z-index: 1
+}
+/* END - PROFILE */
+/* END - HEADER */
+
+.dress-container {
+    width: 88%;
+    margin: 0 auto;
+}
+
+/* START - CARD */
+.card {
+    float: left;
+    width: 25%;
+    padding: 25px;
+}
+
+.visual {
+    background-color: rgb(36, 37, 42);
+}
+
+.add-favorite {
+    position: relative;
+    margin: 0 20px 0 auto;
+    width: 20px;
+    padding: 20px 0 40px 0;
+}
+
+.dress-image {
+    position: relative;
+    width: 55%;
+    height: 260px;
+    margin: 0 auto;
+}
+
+.dress-size {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    background-color: rgb(144, 176, 133);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 15px;
+    top: 25px;
+    margin: 10px 20px 0 auto;
+    color: rgb(36, 37, 42);
+    font-weight: 600;
+   
+}
+
+.dress-name {
+    padding-top: 10px;
+    font-weight: lighter;
+}
+
+.dress-cost {
+    padding: 5px 0 10px 0;
+    color: #979797;
+    font-weight: 400;
+    font-size: 1.5em
+}
+
+.add-cart {
+    border: solid;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #979797;
+}
+/* END - CARD */
+
+/* START - FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 40px;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
+    padding: 25px;
+    font-weight: 600;
+    font-size: 1.3em;
+}
+/* END - FOOTER */
