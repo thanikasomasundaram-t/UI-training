@@ -3,105 +3,188 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto Condensed", sans-serif;
+    color: white;
 }
 
 img {
     max-width: 100%;
 }
-/* START - MAIN */
+
+body {
+    background-color: black;
+}
+
 main {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: column;
-    min-height: 100vh;
-    font-size: 16px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 170px;
 }
 
 /* START - HEADER */
-
 header {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
     width: 90%;
-    height: 580px;
-
+    justify-content: end;
+    align-items: end;
+    height: 500px;
+    /* transform: scale(0.9, 1.1); */
+    gap: 115px;
 }
 
 .email-id {
-    display: flex;
-    width: 90%;
-    justify-content: end;
-    font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 
 header div {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    height: 48%;
+    font-size: 16px;
+    gap: 15px;
 }
 
-header h1 {
-    font-size: 11em;
+header div h1 {
+    font-size: 10em;
     font-weight: lighter;
-    transform: scale(0.9, 1.1);
 }
 
-h1 span {
-    font-weight: 600;
+header div h1 span {
+    font-weight: 900;
+}
+header div h4 {
+    font-size: 3.5em;
 }
 
-header h4 {
-    font-size: 3em;
-    transform: scale(0.9, 1.1);
-    /* margin-top: -20px; */
+header div h4 span {
+    color: grey;
 }
-
 /* END - HEADER */
 
 /* START - CARD */
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: end;
+    gap: 100px;
+    font-size: 16px;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 85%;
+    justify-content: space-between;
+    gap: 25px;
+
 }
 
 .card {
-    display: flex;
-    width: 31.5%;
-    justify-content: center;
-    background-color: grey;
-    margin-bottom: 40px;
+    width: 32%;
 }
 /* END - CARD */
 
-.partners {
+/* START - PARTNERS */
+.partners h2 {
+    font-size: 3.5em;
+    /* transform: scale(0.9, 1.1);    */
+}
+
+.partners h2 span {
+    color: grey;
+}
+
+.logo {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.logo span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11%;
+}
+
+.logo span img {
+    max-height: 85px;
+}
+/* END-PARTNERS */
+
+/* START - FOOTER */
+footer {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
 
-.partners h2 {
-    font-size: 3rem;
-    transform: scale(0.9, 1.1);
+.seperator-line {
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
 }
 
-/* END - MAIN */
+.small {
+    border: 1px solid white;
+    width: 10%;
+}
 
-@media only screen and (max-width: 1650px) {
+.large {
+    border: 1px solid white;
+    width: 80%;
+}
+
+/* END - FOOTER */
+
+
+
+@media (max-width: 500px) {
     main {
-        font-size: 10px;
+        gap: 90px;
+    }
+
+    header {
+        font-size: 9px;
+        justify-content: end;
+        align-items: center;
+        flex-direction: column-reverse;
+        height: 375px;
+        row-gap: 20px;
+    }
+
+    header div {
+        font-size: 4px;
+        align-items: center;
+    }
+
+    header div h4 {
+        font-size: 6em;
     }
 
     .card {
         width: 100%;
     }
+
+    section {
+        font-size: 8px;
+        gap: 50px;
+    }
+
+    .logo span {
+        width: 40%;
+        height: 130px;
+    }
+
 }
+
+
 
