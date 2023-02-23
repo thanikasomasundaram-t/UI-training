@@ -16,19 +16,19 @@ header {
 }
 
 .section {
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
 }
 
 .container-right {
     width: 38%;
     float:right;
-    padding-right: 8%;
 }
 
 .container-left {
     width: 62%;
     float: left;
-    padding: 0 20px 0 8%;
+    padding-right: 20px;
 }
 
 .card {
