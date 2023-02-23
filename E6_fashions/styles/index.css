@@ -81,14 +81,14 @@ header {
 /* END - HEADER */
 
 .dress-container {
-    width: 88%;
+    width: 90%;
     margin: 0 auto;
 }
 
 /* START - CARD */
 .card {
-    float: left;
-    width: 25%;
+    display: inline-block;
+    width: 24.6%;
     padding: 25px;
 }
 
@@ -97,14 +97,12 @@ header {
 }
 
 .add-favorite {
-    position: relative;
     margin: 0 20px 0 auto;
     width: 20px;
     padding: 20px 0 40px 0;
 }
 
 .dress-image {
-    position: relative;
     width: 55%;
     height: 260px;
     margin: 0 auto;
