@@ -55,12 +55,13 @@ header div h1 {
 header div h1 span {
     font-weight: 900;
 }
+
 header div h4 {
     font-size: 3.5em;
 }
 
 header div h4 span {
-    color: grey;
+    color: rgb(91, 142, 220);
 }
 /* END - HEADER */
 
@@ -97,7 +98,7 @@ section {
 }
 
 .partners h2 span {
-    color: grey;
+    color: rgb(194, 231, 145);
 }
 
 .logo {
@@ -125,8 +126,12 @@ footer {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    justify-content: start;
+    gap: 110px;
+    height: 420px;
 }
 
+/* START - SEPERATOR LINE */
 .seperator-line {
     display: flex;
     width: 15%;
@@ -142,8 +147,26 @@ footer {
     border: 1px solid white;
     width: 80%;
 }
+/* END - SEPERATOR LINE */
 
+/* START - CONTACT */
+.contact {
+    display: flex;
+    width: 18%;
+    justify-content: space-between;
+}
+
+.contact span {
+    width: 17%;
+}
+/* END - CONTACT */
+
+.quote {
+    font-size: 1em;
+    font-weight: 600;
+}
 /* END - FOOTER */
+/* END - MAIN */
 
 
 
@@ -151,7 +174,7 @@ footer {
     main {
         gap: 90px;
     }
-
+    /* START - HEADER */
     header {
         font-size: 9px;
         justify-content: end;
@@ -169,6 +192,7 @@ footer {
     header div h4 {
         font-size: 6em;
     }
+    /* END -HEADER */
 
     .card {
         width: 100%;
@@ -183,7 +207,20 @@ footer {
         width: 40%;
         height: 130px;
     }
+    /* START - FOOTER */
+    footer {
+        gap: 50px;
+        height: 260px;
+    }
 
+    .seperator-line {
+        width: 50%;
+    }
+
+    .contact {
+        width: 85%;
+    }
+    /* END - FOOTER */
 }
 
 
