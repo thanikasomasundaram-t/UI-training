@@ -47,7 +47,7 @@ img {
 .menu-slide {
     position: absolute;
     width: 16%;
-    left: 0;
+    left: -20%;
     top: 15%;
     padding: 40px 0;
     background-color: black;
@@ -60,11 +60,16 @@ img {
     gap: 25px;
     border-radius: 0 20px 20px 0;
     font-size: 1.25em;
-    display: none;
+    transition: left 3s;
 }
 
  .hamburger-icon:hover ~ .menu-slide {
     display: flex;
+    left: 0;
+}
+
+.menu-slide:hover {
+    left: 0;
 }
 
 li img {
