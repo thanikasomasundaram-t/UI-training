@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     color: white;
 }
 
@@ -10,85 +10,110 @@ img {
     max-width: 100%;
 }
 /* START - MAIN */
-main {
+
+.container {
     background-image: url("../images/background-image.png");
     background-size: cover;
-    height: 100vh;
-    padding-top: 50px;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 50px; 
     display: flex;
     justify-content: space-between;
 }
+
 /* START - MENU ICON */
-.menu-icon {
-    /* position: absolute; */
+.menu {
     height: 100px;
     width: 100px;
     background-color: black;
     padding: 33px;
+    margin-right: 200px;
 }
 
 .hamburger-icon {
     display: flex;
     height: 100%;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .hamburger-icon span {
-    width: 100%;
     height: 3px;
     background-color: white;
 }
 /* END - MENU ICON */
 
-/* START - CENTER */
-.center {
+
+.menu-slide {
+    position: absolute;
+    width: 16%;
+    left: 0;
+    top: 13%;
+    padding: 40px 0;
+    background-color: black;
+    color: white;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 25px;
+    border-radius: 0 20px 20px 0;
+    font-size: 1.25em;
+    display: none;
+}
+
+ .hamburger-icon:hover ~ .menu-slide {
+    display: flex;
+}
+
+li img {
+  max-height: 75px;  
+}
+/* START - MAIN */
+main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items:center;
-    height: 100vh;
-    padding-bottom: 90px;
-    margin-left: 110px;
+    /* padding-bottom: 20px; */
+    max-width: 100%;
 }
 
 header {
-    height: 100px;
-    display: flex;
-    align-items: center;
-}
-
-header h1 {
     font-size: 5rem;
-    transform: scale(0.9, 1);
+    font-weight: 600;
 }
 
 .motto h3 {
-    transform: scale(0.9, 1.1);
     font-size: 7rem;
 }
 
 .motto h2 {
-    transform: scale(0.9, 1.1);
     font-size: 9.5rem;
 }
-/* END - CENTER */
+/* END - MAIN */
 
 /* START - RIGHT */
 
-.right div {
-    display: flex;
-    transform: rotate(-90deg);
-    height: 100px;
-    width: 200px;
-    margin-top: 260px;
-
+.established {
+    position: relative;
+    width: 20%;
 }
-.right h2 {
+
+.established div {
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 15%;
+    left: 15%;
+}
+
+.established div span {
     font-size: 7rem;
 }
 
-.right h6 {
+.established div h6 {
     font-size: 3rem;
-    margin-top: 60px;
 }
+
+/* END - RIGHT */
