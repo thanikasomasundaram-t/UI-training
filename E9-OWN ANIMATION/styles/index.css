@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* START - SWITCH */
+
+.switch {
+    position: absolute;
+    right: 25%;
+}
+
+.wire {
+    width: 0;
+    border: 5px solid black;
+    height: 300px;
+}
+
+.holder {
+    position: relative;
+    border: 10px solid black;
+    height: 80px;
+    border-radius: 20px;
+    top: -5px;
+    right: calc(50% - 5px);
+}
+
+/* END - SWITCH */
+
+/* START - LIGHT BULB */
+
+.light-bulb {
+    position: absolute;
+    left: calc(50% - 2.5px);
+}
+
+.light-bulb .wire {
+    height: 100px;
+}
+
+.body-bottom {
+    position: relative;
+    border: 10px solid black;
+    height: 30px;
+    right: calc(50% - 5px);
+}
+
+.body {
+    position: absolute;
+    border: 10px solid #f9e400;
+    background-color: #f9e400;
+    width: 80px;
+    height: 90px;
+    border-radius: 50%;
+    right: -120%;
+}
+
+/* END - LIGHT BULB */
+
+/* START - EYES */
+
+.eyes {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    top: calc(60% - 200px);
+    left: calc(50% - 200px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.eyeball {
+    position: relative;
+    width: 45%;
+    height: 45%;
+    border: 5px solid black;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.iris {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+}
