@@ -2,7 +2,7 @@
 console.log("section - 1");
 
 console.log(1 + 2);
-console.log("apple" + "orange");
+console.log("apple" + "orange" + 2);
 console.log(1 + 2 + "apple");
 console.log("apple" + 1 + 2);
 console.log(1 + true);
@@ -59,31 +59,25 @@ console.log('sorted palyers - ', cricketTeam.sort())
 console.log("6.Assign random jerseys");
 
 
-console.time();
-cricketTeam.map((playerName, i) => {
+const playersDetail = cricketTeam.map((playerName, i) => {
     let jerseyNumber = Math.floor(Math.random()*100);
-    cricketTeam[i] = {
+    return ({
         playerName,
         jerseyNumber,
-    }
+    });
 });
-console.timeEnd();
 
-console.log(cricketTeam);
+console.log(playersDetail);
 
 // 7.uppercase
 console.log("7.uppercase");
 
-let playerNameUpperCase = [];
+const jerseyPrint = playersDetail.map((playerDetails) => ({
+    ...playerDetails,
+    playerName: playerDetails.playerName.toUpperCase(),
+}));
 
-cricketTeam.map((playerDetails) => {
-    playerNameUpperCase.push({
-        ...playerDetails,
-        playerName: playerDetails.playerName.toUpperCase(),
-    });
-});
-
-console.log(playerNameUpperCase);
+console.log(jerseyPrint);
 
 //section-3
 console.log("section-3");
@@ -103,12 +97,9 @@ displayOneToHundered();
 console.log("2.display today's date");
 
 const displayDate = () => {
-    let dateDetails = new Date().toISOString();
-    dateDetails = dateDetails.split('T');
-    console.log(dateDetails);
-    let dateArr = dateDetails[0];
-    dateArr = dateArr.split('-')
-    let date = dateArr[2] + '/' + dateArr[1] + '/' + dateArr[0];
+    const months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    let dateDetails = new Date();
+    let date = dateDetails.getDate() + '/' + months[dateDetails.getMonth()] + '/' + dateDetails.getFullYear();
     console.log("today's date - ", date);
 }
 
@@ -118,12 +109,9 @@ displayDate();
 // 3. celsius to farenheit
 console.log("3.celsius to farenheit");
 
-const celsiusToFarenheit = (celsiusValue) => {
-    let farenheitValue = (celsiusValue * 1.8) + 32;
-    return farenheitValue;
-}
+const celsiusToFarenheit = (celsiusValue) => (celsiusValue * 1.8) + 32;
 
-console.log('farenheit Value', celsiusToFarenheit(45));
+console.log('farenheit Value', celsiusToFarenheit(35));
 
 // 4. average of numbers
 console.log("4.average of numbers");
@@ -144,16 +132,10 @@ console.log(average(scores));
 console.log("5.reverse a string");
 
 const reverseString = (string) => {
-    reverseStr = string.split('');
-
-    console.log("splitted", reverseStr);
-    
-    reverseStr.reverse();
-    
-    console.log("reverse", reverseStr);
-    
-    reverseStr = reverseStr.join('');
-    
+    let reverseStr = '';
+    for(i in string) {
+        reverseStr = string[i] + reverseStr;
+    }
     return reverseStr;
 }
 
