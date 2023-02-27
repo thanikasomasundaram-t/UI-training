@@ -23,19 +23,9 @@ header {
 
 .cmpy-logo {
     position: absolute;
+
     width: 10%;
     padding-top: 10px;
-}
-
-.cmpy-logo h1 {
-    font-family: "cellion";
-    font-size: 3.5em;
-    color: #87b181;
-}
-
-.cmpy-logo span {
-    font-family: "cellion";
-    color: #c9828f;
 }
 
 /* START - PROFILE */
@@ -43,7 +33,7 @@ header {
 .profile {
     width: 70px;
     margin: 7px 0px 0px auto;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .profile-icon {
@@ -57,9 +47,9 @@ header {
     position: absolute;
     display: none;
     right: 7%;
+    top: 13%;
     width: 220px;
     border: solid;
-    margin-top: 10px;
     padding: 10px 10px 10px 20px;
 }
 
@@ -150,7 +140,6 @@ i {
     left: 75%;
     color: rgb(36, 37, 42);
     font-weight: 600;
-   
 }
 
 .dress-name {
