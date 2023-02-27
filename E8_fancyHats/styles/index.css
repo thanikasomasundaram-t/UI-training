@@ -118,7 +118,19 @@ header {
 }
 
 .established div h6 {
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
+i {
+    font-size: 2em;
+}
+
+.contact {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
 /* END - RIGHT */
