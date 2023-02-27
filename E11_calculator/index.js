@@ -1,43 +1,19 @@
-//  CALCULATOR USING OBJECT
-
-// start - calculator
-const calculator = (operands, operator) => {
-
-    const arithmeticOperations = [
-        {
-            operator: '+',
-            calculation: (operands) => {
-                return operands[0] + operands[1];
-            }
-        },
-        {
-            operator: '-',
-            calculation: (operands) => {
-                return operands[0] - operands[1];
-            }
-        },
-        {
-            operator: '/',
-            calculation: (operands) => {
-                return operands[0] / operands[1];
-            }
-        },
-        {
-            operator: '*',
-            calculation: (operands) => {
-                return operands[0] * operands[1];
-            }
-        },
-    ];
-
-    for(i in arithmeticOperations) {
-
-        if(arithmeticOperations[i].operator === operator){
-
-            return arithmeticOperations[i].calculation(operands);
-        }
+const calculator = {
+    add: (operand1, operand2) => {
+        return operand1 + operand2;
+    },
+    sub: (operand1, operand2) => {
+        return operand1 - operand2;
+    },
+    mul: (operand1, operand2) => {
+        return operand1 * operand2;
+    },
+    div: (operand1, operand2) => {
+        return operand1/operand2;
     }
 }
-// end - calculator
 
-console.log(calculator([100, 400], '+'));
+console.log(calculator.add(6, 2));
+console.log(calculator.sub(6, 2));
+console.log(calculator.mul(6, 2));
+console.log(calculator.div(6, 2));
