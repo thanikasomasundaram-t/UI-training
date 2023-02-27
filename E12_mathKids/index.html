@@ -2,10 +2,48 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link src="./styles/index.css" rel="stylesheet"/>
+    <link href="./styles/index.css" rel="stylesheet"/>
     <title>Math kids</title>
 </head>
 <body>
-    hi
+    <!-- START - HEADER -->
+    <header>
+        <span>MATH KIDS</span>
+        <span>KIDS LEARNING APP</span>
+    </header>
+    <!-- END - HEADER -->
+    <!-- START - MAIN -->
+    <main>
+        <!-- START - STEP-1 -->
+        <section class="step-1">
+            <h2 class="heading">1.Choose a Shape</h2>
+            <div class="shapes">
+                <span class="circle">
+                </span>
+                <span class="triangle">
+                </span>
+                <span class="square">
+                </span>
+            </div>
+            <button id='next-button' class="button">NEXT</button>
+        </section>
+        <!-- END - STEP-1 -->
+
+        <!-- START - STEP-2 -->
+        <section class="step-2">
+            <h2 class="heading">2. Enter Radius</h2>
+            <input class="input" type="number"/>
+            <button id='calculate-button'class="button">CALCULATE</button>
+        </section>
+        <!-- END - STEP-2 -->
+
+        <!-- START - STEP-3 -->
+        <section class="step-3">
+            <button id='start-again-button'class="button">START AGAIN</button>
+        </section>
+        <!-- END - STEP-3 -->
+    </main>
+    <!-- END - MAIN -->
+    <script src="./script/index.js" type="text/javascript"></script>
 </body>
 </html>
