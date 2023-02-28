@@ -9,11 +9,16 @@ img {
     max-width: 100%;
 }
 
+body {
+    background-color: black;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     padding: 25px;
     border: solid;
+    background-color: rgb(180, 223, 145);
 }
 
 header span {
@@ -39,16 +44,16 @@ section {
 
 /* START - STEP-1 */
 .step-1 {
-    position: relative;
     width: 60%;
-    height: 48%;
+    height: 50%;
     /* display: none; */
-
+    color: white;
 }
 
 .heading {
     font-size: 3em;
-    font-weight: 600;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 .shapes {
@@ -65,7 +70,7 @@ section {
     align-items: center;
     width: 155px;
     border-radius: 50%;
-    background-color: grey;
+    background-color: rgb(67, 150, 126);
 }
 
 .triangle {
@@ -75,7 +80,7 @@ section {
     padding-bottom: 25px;
     width: 155px;
     clip-path: polygon(50% 0, 100% 100%, 50% 100%, 0% 100%);
-    background-color: grey;
+    background-color: rgb(243, 175, 218);
 }
 
 .square {
@@ -83,7 +88,7 @@ section {
     justify-content: center;
     align-items: center;
     width: 155px;
-    background-color: grey;
+    background-color: rgb(224, 224, 224);
 }
 
 .button {
@@ -91,10 +96,12 @@ section {
     padding: 15px 0; 
     font-size: 1.4em;
     font-weight: 600;
-    border: solid grey;
+    border: solid white;
     border-radius: 5px;
     cursor: pointer;
     background: none;
+    color: white;
+
 }
 
 .tick {
@@ -110,22 +117,70 @@ section {
 
 /* START - STEP-2 */
 .step-2 {
-    position: relative;
     width: 60%;
-    height: 30%;
+    height: 32%;
     display: none;
+    gap: 10px; 
+    color: white;
 }
 
 .input {
     width: 70%;
     font-size: 3em;
     padding: 15px;
-    caret-color: transparent;
+    background-color: transparent;
+    border: none;
+    border: 1px solid white;
+    color: white;
+    /* caret-color: transparent; */
 }
 /* END - STEP-2 */
 
 /* START - STEP-3 */
 .step-3 {
     display: none;
+    width: 40%;
+    height: 65%;
+    color: white;
+}
+
+.step-3 .button {
+    margin-top: 25px;
+}
+
+.output-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    gap: 20px;
+}
+
+.output-container div {
+    display: flex;
+    width: 100%;
+    font-size: 1.2em;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 300;
+}
+
+.output-container div span {
+    width: 30%;
+    padding: 15px;
+}
+
+.output-container div span:first-child {
+    width: 45%;
+    background-color: rgb(43, 96,206);
+}
+
+.output-container div span:nth-child(2) {
+    background-color: rgb(74, 93, 124);
+}
+
+.output-container div span:nth-child(3) {
+    background-color: rgb(74, 134, 247);
 }
 /* END - STEP-3 */
