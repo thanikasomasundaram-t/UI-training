@@ -16,23 +16,25 @@ body {
 
 /* START - HEADER */
 header {
-    width: 86%;
-    margin: 0 auto;
-    padding: 30px 0;
+    position: relative;
+    width: 100%;
+    height: 180px;
 }
 
-.cmpy-logo {
+.company-logo {
     position: absolute;
-
+    left: 8%;
+    top: 44%;
     width: 10%;
-    padding-top: 10px;
 }
 
 /* START - PROFILE */
 
 .profile {
+    position: absolute;
+    right: 8%;
+    top: 44%;
     width: 70px;
-    margin: 7px 0px 0px auto;
     padding-bottom: 20px;
 }
 
@@ -41,16 +43,18 @@ header {
     border: solid;
     border-radius: 50%;
     background-color: #d8d8d8;
+    cursor: pointer;
 }
 
 .drop-down {
     position: absolute;
     display: none;
-    right: 7%;
-    top: 13%;
-    width: 220px;
+    right: 8%;
+    top: 100%;
+    width: 260px;
     border: solid;
     padding: 10px 10px 10px 20px;
+    cursor: pointer;
 }
 
 .drop-down a {
@@ -59,7 +63,8 @@ header {
     padding: 10px 0; 
     color: black;
     font-weight: 600;
-
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .profile:hover .drop-down {
@@ -71,12 +76,10 @@ header {
 /* END - HEADER */
 
 
-main {
-    padding-bottom: 300px;
-}
 .dress-container {
     width: 88%;
     margin: 0 auto;
+    margin-bottom: 200px;
 }
 
 /* START - CARD */
@@ -86,16 +89,18 @@ main {
     padding: 25px;
 }
 
-.visual {
+.visual-display {
     background-color: rgb(36, 37, 42);
+    position: relative;
+    height: 435px;
 }
 
 .add-favorite {
-    display: inline-block;
-    position: relative;
-    left: 88%;
-    width: 22px;
-    padding: 20px 0 40px 0;
+    /* display: inline-block; */
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    cursor: pointer;
 }
 
 i {
@@ -103,9 +108,9 @@ i {
 }
 
 .solid {
-    position: relative;
+    position: absolute;
+    left: 0;
     color: #87b181;
-    top: -22px;
     visibility: hidden;
 }
 
@@ -121,6 +126,7 @@ i {
     width: 65%;
     margin: 0 auto;
     text-align: center; 
+    padding-top: 100px;
 }
 
 .dress-image img {
@@ -128,30 +134,31 @@ i {
 }
 
 .dress-size {
-    position: relative;
+    position: absolute;
     height: 60px;
     width: 60px;
+    bottom: -7%;
+    right: 5%;
     background-color: rgb(144, 176, 133);
+    color: rgb(36, 37, 42);
     border-radius: 50%;
     font-size: 1.5rem;
+    font-weight: 600;
     text-align: center;
     padding: 15px;
-    top: 25px;
-    left: 75%;
-    color: rgb(36, 37, 42);
-    font-weight: 600;
 }
 
 .dress-name {
     padding-top: 10px;
-    font-weight: lighter;
+    font-weight: 400;
+    font-size: 1.45em;
 }
 
 .dress-cost {
     padding: 5px 0 10px 0;
     color: #979797;
-    font-weight: 400;
-    font-size: 1.5em
+    font-weight: 300;
+    font-size: 1.3em;
 }
 
 .add-cart {
@@ -159,11 +166,13 @@ i {
     display: inline-block;
     padding: 10px 20px;
     color: #979797;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .add-cart:hover {
     background-color:rgb(144, 176, 133);
-    color: white;
+    color: black;
 }
 /* END - CARD */
 
