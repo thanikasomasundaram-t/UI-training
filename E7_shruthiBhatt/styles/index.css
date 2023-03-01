@@ -180,7 +180,7 @@ footer {
         justify-content: end;
         align-items: center;
         flex-direction: column-reverse;
-        height: 375px;
+        height: 350px;
         row-gap: 20px;
     }
 
