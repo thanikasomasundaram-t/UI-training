@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* START - HEADER */
+header {
+    padding: 35px;
+    background-color: rgb(55, 30, 99);
+    color: white;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+/* END - HEADER */
+
+/* START - MAIN */
+main {
+    width: 90%;
+    margin: 70px auto;
+}
+
+.list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* START - CARD */
+.card {
+    width: 509px;
+    height: 110px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 15px;
+    background-color: rgb(82, 102, 175);
+    color: white;
+    gap: 22px;
+    margin-bottom: 15px;
+}
+
+.profile img {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 3px;
+}
+
+.name {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.email {
+    font-weight: 300;
+    font-size: 0.9em;
+}
+/* END - CARD */
+/* END - MAIN */
