@@ -113,8 +113,6 @@ document.querySelector('#calculate-button').addEventListener('click', (event) =>
     console.log("iiii", heading);
     heading.innerHTML = shapes[selectedShape].fullName;
 
-
-
     localStorage.setItem('userValue', document.querySelector('input').value);
     console.log(document.querySelector('input').value);
 
@@ -148,6 +146,9 @@ document.querySelector('#start-again-button').addEventListener('click', (event) 
     document.querySelector('.step-1').style.display='flex';
 
     let outputContainer = document.querySelectorAll(".output-container > div");
+
+    let selectedShape = localStorage.getItem('shape');
+    console.log("ffff", document.querySelector('.'+selectedShape).innerHTML = '');
     for(index in outputContainer) {
         outputContainer[index].innerHTML='';
     };
