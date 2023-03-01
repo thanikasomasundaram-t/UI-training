@@ -104,6 +104,10 @@ section {
 
 }
 
+.step-1 .button {
+    visibility: hidden;
+}
+
 .tick {
     width: 30px;
     height: 60px;

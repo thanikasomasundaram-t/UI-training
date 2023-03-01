@@ -10,7 +10,7 @@ const shapes = {
             },
             {
                 name: 'AREA',
-                formula: '&pi; r * r;',
+                formula: '&pi; r * r',
                 solution: (radius) => parseFloat((22/7 * radius * radius).toFixed(2)) + ' sq cm',
             },
             {
@@ -69,19 +69,19 @@ const shapes = {
 
 document.querySelector('.shapes').addEventListener('click', (event) => {
     let children = document.querySelector('.shapes').children;
-    console.log(document.querySelector('.shapes').children);
 
     for(i in children) {
         if(children[i].className === event.target.className) {
             let tick = document.createElement('div');
             tick.className = 'tick';
             event.target.appendChild(tick);
+            document.querySelector('.button').style.visibility = 'visible';
         }
         else {
             children[i].innerHTML = '';
         }
     }
-    localStorage.setItem('shape', event.target.className)
+    localStorage.setItem('shape', event.target.className);
 });
 
 // CLICK NEXT BUTTON - STEP1
@@ -90,6 +90,7 @@ document.querySelector('#next-button').addEventListener('click', (event) => {
     document.querySelector('.step-1').style.display='none';
     document.querySelector('.step-2').style.display='flex';
 
+    // ADD HAEDING RESPECTIVE TO SELECTED SHAPE
     let selectedShape = localStorage.getItem('shape');
 
     document.querySelectorAll('.heading')[1].innerHTML = shapes[selectedShape].heading;
@@ -110,23 +111,17 @@ document.querySelector('#calculate-button').addEventListener('click', (event) =>
     spanShape.style.height = '155px';
 
     let heading = document.querySelectorAll('.heading')[2];
-    console.log("iiii", heading);
     heading.innerHTML = shapes[selectedShape].fullName;
 
     localStorage.setItem('userValue', document.querySelector('input').value);
-    console.log(document.querySelector('input').value);
 
-    let outputContainer1 = document.querySelector('.output-container').children;
-    console.log("ithan da ");
-    console.log(outputContainer1);
-
+    // CREATE TABLE FOR DISPLAYING OUTPUT CALCULATIONS
     let outputContainer = document.querySelectorAll(".output-container > div");
     
     for(index in outputContainer) {
         let propertyName = document.createElement('span');
         let formula = document.createElement('span');
         let value = document.createElement('span');
-        console.log(shapes[selectedShape].property[index].name);
 
         propertyName.innerHTML = shapes[selectedShape].property[index].name;
         formula.innerHTML = shapes[selectedShape].property[index].formula;
@@ -148,10 +143,12 @@ document.querySelector('#start-again-button').addEventListener('click', (event) 
     let outputContainer = document.querySelectorAll(".output-container > div");
 
     let selectedShape = localStorage.getItem('shape');
-    console.log("ffff", document.querySelector('.'+selectedShape).innerHTML = '');
+    document.querySelector('.'+selectedShape).innerHTML = '';
     for(index in outputContainer) {
         outputContainer[index].innerHTML='';
     };
+    localStorage.removeItem('shape');
+    localStorage.removeItem('userValue');
 });
 
 
