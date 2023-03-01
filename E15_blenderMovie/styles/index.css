@@ -9,3 +9,44 @@ img {
     max-width: 100%;
 }
 
+/* START - HEADER */
+header {
+    height: 65px;
+    padding: 20px 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile h6 {
+    font-weight: 300;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+}
+
+.icon img {
+    border-radius: 50%;
+    height: 100%;
+}
+/* END - HEADER */
+
+/* START - MAIN */
+main {
+    background-color: rgb(245, 245, 245);
+}
+
+/* END - MAIN */
