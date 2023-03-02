@@ -68,6 +68,67 @@ video {
     width: 873px;
 }
 
+.synopsis {
+    padding: 20px 0;
+}
+
+.synopsis h2 {
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.description {
+    font-size: .82em;
+    line-height: 1.7em;
+    font-weight: 100;
+}
+
+.line {
+    border: 0.5px solid grey;
+}
+
+.comments {
+    display: flex;
+    padding: 20px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.reviewer-profile {
+    width: 45px;
+    height: 45px;
+}
+
+.reviewer-profile img {
+    border-radius: 50%;
+}
+
+.reviewer-details {
+    display: flex;
+    width: 94%;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 15px;
+    gap: 10px;
+}
+
+.name {
+    font-size: 0.82em;
+    font-weight: 600;
+}
+
+.reviewer-comment {
+    font-size: 0.82em;
+    font-weight: 200;
+    text-align: justify;
+}
 
 /* END - LEFT-CONTAINER */
 
@@ -80,9 +141,25 @@ video {
 }
 /* END - UPCOMING PROJECTS */
 
+
+
 /* END - MAIN */
 
 /* START - FOOTER */
 footer {
     height: 70px;
+    padding: 20px 280px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
 }
+
+.copy-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* END - FOOTER */

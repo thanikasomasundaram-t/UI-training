@@ -11,4 +11,4 @@ const posters = [
         "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Spring2019AlphaPosterBlender.jpg/1200px-Spring2019AlphaPosterBlender.jpg",
         "title" : "Spring"
     }
-]
+];
