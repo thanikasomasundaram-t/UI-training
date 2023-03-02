@@ -144,9 +144,21 @@ video {
 }
 /* END - UPCOMING PROJECTS */
 
-
-
 /* END - MAIN */
+
+/* START - MESSAGE */
+.message {
+    position: fixed;
+    height: 70px;
+    width: 70px;
+    right: 35px;
+    bottom: 35px;
+}
+
+.message img {
+    border-radius: 50%;
+}
+/* END - MESSAGE */
 
 /* START - FOOTER */
 footer {
@@ -197,4 +209,12 @@ footer {
     footer > h5 {
         font-size: 1.4em;
     }
+    .user-profile h6 {
+        display: none;
+    }
+
+    .message {
+        right: 10px;
+    }
 }
+
