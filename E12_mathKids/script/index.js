@@ -68,7 +68,9 @@ const shapes = {
 // WHEN SHAPES CLICKED, TICK APPEARS
 
 document.querySelector('.shapes').addEventListener('click', (event) => {
-    let children = document.querySelector('.shapes').children;
+    console.log(event);
+    let children = event.target.parentElement.children;
+
 
     for(i in children) {
         if(children[i].className === event.target.className) {
@@ -93,7 +95,7 @@ document.querySelector('#next-button').addEventListener('click', (event) => {
     // ADD HAEDING RESPECTIVE TO SELECTED SHAPE
     let selectedShape = localStorage.getItem('shape');
 
-    document.querySelectorAll('.heading')[1].innerHTML = shapes[selectedShape].heading;
+    document.querySelector('#step2 > .heading').innerHTML = shapes[selectedShape].heading;
 });
 
 
@@ -110,15 +112,20 @@ document.querySelector('#calculate-button').addEventListener('click', (event) =>
     spanShape.className = selectedShape;
     spanShape.style.height = '155px';
 
-    let heading = document.querySelectorAll('.heading')[2];
+    let heading = document.querySelector('#step3 > .heading');
     heading.innerHTML = shapes[selectedShape].fullName;
 
     localStorage.setItem('userValue', document.querySelector('input').value);
 
     // CREATE TABLE FOR DISPLAYING OUTPUT CALCULATIONS
-    let outputContainer = document.querySelectorAll(".output-container > div");
-    
-    for(index in outputContainer) {
+    let outputContainer = document.querySelector(".output-container");
+    const fragement = new DocumentFragment();
+
+    for(index = 0; index<3; index++) {
+        const selectedShape = localStorage.getItem('shape')
+
+        let parentDiv = document.createElement('div');
+
         let propertyName = document.createElement('span');
         let formula = document.createElement('span');
         let value = document.createElement('span');
@@ -127,26 +134,29 @@ document.querySelector('#calculate-button').addEventListener('click', (event) =>
         formula.innerHTML = shapes[selectedShape].property[index].formula;
         value.innerHTML = shapes[selectedShape].property[index].solution(localStorage.getItem('userValue'));
         
-        outputContainer[index].appendChild(propertyName);
-        outputContainer[index].appendChild(formula);
-        outputContainer[index].appendChild(value);
+        parentDiv.appendChild(propertyName);
+        parentDiv.appendChild(formula);
+        parentDiv.appendChild(value);
+        fragement.appendChild(parentDiv);
     };
+
+    outputContainer.appendChild(fragement);
 
 });
 
 // CLICK START AGAIN BUTTON - STEP3
 
-document.querySelector('#start-again-button').addEventListener('click', (event) => {
+document.querySelector('#start-again-button').addEventListener('click', () => {
     document.querySelector('.step-3').style.display='none';
     document.querySelector('.step-1').style.display='flex';
 
-    let outputContainer = document.querySelectorAll(".output-container > div");
+    document.querySelector(".output-container").innerHTML = '';
 
     let selectedShape = localStorage.getItem('shape');
     document.querySelector('.'+selectedShape).innerHTML = '';
-    for(index in outputContainer) {
-        outputContainer[index].innerHTML='';
-    };
+
+    document.querySelector('input').value = '';
+
     localStorage.removeItem('shape');
     localStorage.removeItem('userValue');
 });

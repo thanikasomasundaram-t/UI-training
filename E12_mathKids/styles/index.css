@@ -10,7 +10,7 @@ img {
 }
 
 body {
-    background-color: black;
+    background-color: #000;
 }
 
 header {
@@ -18,7 +18,7 @@ header {
     justify-content: space-between;
     padding: 25px;
     border: solid;
-    background-color: rgb(180, 223, 145);
+    background-color: #b4df91;
 }
 
 header span {
@@ -70,7 +70,7 @@ section {
     align-items: center;
     width: 155px;
     border-radius: 50%;
-    background-color: rgb(67, 150, 126);
+    background-color: #43967e;
 }
 
 .triangle {
@@ -88,7 +88,7 @@ section {
     justify-content: center;
     align-items: center;
     width: 155px;
-    background-color: rgb(224, 224, 224);
+    background-color: #e0e0e0;
 }
 
 .button {
@@ -114,7 +114,7 @@ section {
     border-bottom: 3px solid;
     border-right: 3px solid;
     transform: rotate(45deg);
-    border-color: white;
+    border-color: #fff;
 }
 
 /* END - STEP-1 */
@@ -125,7 +125,7 @@ section {
     height: 32%;
     display: none;
     gap: 10px; 
-    color: white;
+    color: #fff;
 }
 
 .input {
@@ -134,8 +134,8 @@ section {
     padding: 15px;
     background-color: transparent;
     border: none;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid #fff;
+    color: #fff;
     /* caret-color: transparent; */
 }
 /* END - STEP-2 */
@@ -145,7 +145,7 @@ section {
     display: none;
     width: 40%;
     height: 65%;
-    color: white;
+    color: #fff;
 }
 
 .step-3 .button {
@@ -177,14 +177,14 @@ section {
 
 .output-container div span:first-child {
     width: 45%;
-    background-color: rgb(43, 96,206);
+    background-color: #2b60ce;
 }
 
 .output-container div span:nth-child(2) {
-    background-color: rgb(74, 93, 124);
+    background-color: #4a5d7c;
 }
 
 .output-container div span:nth-child(3) {
-    background-color: rgb(74, 134, 247);
+    background-color: #4a86f7;
 }
 /* END - STEP-3 */
