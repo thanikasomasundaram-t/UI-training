@@ -65,12 +65,13 @@ const shapes = {
     }
 }
 
+const outputContainer = document.querySelector(".output-container");
+
+
 // WHEN SHAPES CLICKED, TICK APPEARS
 
 document.querySelector('.shapes').addEventListener('click', (event) => {
-    console.log(event);
     let children = event.target.parentElement.children;
-
 
     for(i in children) {
         if(children[i].className === event.target.className) {
@@ -118,7 +119,6 @@ document.querySelector('#calculate-button').addEventListener('click', (event) =>
     localStorage.setItem('userValue', document.querySelector('input').value);
 
     // CREATE TABLE FOR DISPLAYING OUTPUT CALCULATIONS
-    let outputContainer = document.querySelector(".output-container");
     const fragement = new DocumentFragment();
 
     for(index = 0; index<3; index++) {
@@ -150,7 +150,7 @@ document.querySelector('#start-again-button').addEventListener('click', () => {
     document.querySelector('.step-3').style.display='none';
     document.querySelector('.step-1').style.display='flex';
 
-    document.querySelector(".output-container").innerHTML = '';
+    outputContainer.innerHTML = '';
 
     let selectedShape = localStorage.getItem('shape');
     document.querySelector('.'+selectedShape).innerHTML = '';
