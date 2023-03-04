@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./styles/index.css" rel="stylesheet"/>
+    <link href="./styles/index.css" rel="stylesheet" />
     <title>Form Validation</title>
 </head>
+
 <body>
+    <header>
+        <img src="./images/logo.svg" alt="sirius logo" />
+    </header>
     <main>
-        <div class="logo">
-            <img src="./images/siriusLogo.svg" alt="sirius logo"/>
-        </div>
-        <section>
-            <form>
-                <h1>BILLING DETAILS</h1>
-                <div class="name">
-                    <label name="firstName">First Name</label>
-                    <input value="firstName"/>
-                    <label name="lastName">Last Name</label>
-                    <input value="lastName"/>
+        <form>
+            <h3>BILLING DETAILS</h3>
+            <section>
+                <div>
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" name="First Name" />
                 </div>
-            </form>
-        </section>
+                <div>
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" name="lastName" />
+                </div>
+            </section>
+            <div>
+                <label for="email">Email Address</label>
+                <input id="email" name="email" />
+            </div>
+            <div>
+                <label for="contactNumber">Contact Number</label>
+                <input id="contactNumber" name="contactNumber" />
+            </div>
+            <div>
+                <label for="pin">PIN Code</label>
+                <input id="pin" name="pin" />
+            </div>
+            <h3 class="payment-details">PAYMENT DETAILS</h3>
+            <div>
+                <label for="cardNumber">Card Number</label>
+                <input id="cardNumber" name="cardNumber" />
+            </div>
+            <section>
+                <div>
+                    <label for="cardExpiry">Card Expiry(year)</label>
+                    <input id="cardExpiry" name="cardNumber" />
+                </div>
+                <div>
+                    <label for="cvv">CVV</label>
+                    <input id="cvv" name="cvv" />
+                </div>
+            </section>
+            <button>COMPLETE PAYMENT</button>
+        </form>
     </main>
 </body>
+
 </html>
