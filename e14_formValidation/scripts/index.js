@@ -33,6 +33,8 @@ document.querySelector('button').addEventListener('click', (event) => {
     const inputFields = form.querySelectorAll('input');
 
     inputFields.forEach(element => {
-            validateDetails(element, regexValues[element.id]);
+        if(validateDetails(element, regexValues[element.id])) {
+            form.submit();
+        }
     });
 });
