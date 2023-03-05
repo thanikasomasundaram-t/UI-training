@@ -31,10 +31,15 @@ document.querySelector('button').addEventListener('click', (event) => {
     event.preventDefault();
     const form = event.target.parentElement;
     const inputFields = form.querySelectorAll('input');
+    var flag = 1;
 
     inputFields.forEach(element => {
-        if(validateDetails(element, regexValues[element.id])) {
-            form.submit();
+        if(validateDetails(element, regexValues[element.id]) == 0) {
+            flag = 0;
         }
     });
+    
+    if (flag) {
+        form.submit();
+    }
 });
