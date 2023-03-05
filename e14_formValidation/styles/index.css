@@ -28,7 +28,7 @@ main {
 
 form {
     width: 36.5%;
-    background-color: rgb(228, 228, 228);
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     padding: 40px;
@@ -38,6 +38,7 @@ form {
 
 h3 {
     font-weight: 500;
+    color: #001B71;
 }
 
 .payment-details {
@@ -52,8 +53,13 @@ label {
 input {
     width: 100%;
     height: 45px;
-    border: solid rgb(194, 194, 194);
+    border: solid #c2c2c2;
     border-radius: 5px;
+}
+
+.alert {
+    color: #A80000;
+    font-weight: 300;
 }
 
 section {
@@ -69,4 +75,6 @@ button {
     height: 45px;
     border: none;
     border-radius: 5px;
+    background-color: #001B71;
+    color: #fff;
 }

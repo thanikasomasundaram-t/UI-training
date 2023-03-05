@@ -14,48 +14,62 @@
         <img src="./images/logo.svg" alt="sirius logo" />
     </header>
     <main>
-        <form>
+        <form action="./styles/index.css" method="get" onsubmit="">
             <h3>BILLING DETAILS</h3>
             <section>
                 <div>
                     <label for="firstName">First Name</label>
                     <input id="firstName" name="First Name" />
+                    <h6 class="alert"></h6>
                 </div>
                 <div>
                     <label for="lastName">Last Name</label>
                     <input id="lastName" name="lastName" />
+                    <h6 class="alert">
+                        </6>
+
                 </div>
             </section>
             <div>
                 <label for="email">Email Address</label>
                 <input id="email" name="email" />
+                <h6 class="alert"></h6>
             </div>
             <div>
                 <label for="contactNumber">Contact Number</label>
                 <input id="contactNumber" name="contactNumber" />
+                <h6 class="alert"></h6>
             </div>
             <div>
                 <label for="pin">PIN Code</label>
                 <input id="pin" name="pin" />
+                <h6 class="alert"></h6>
             </div>
             <h3 class="payment-details">PAYMENT DETAILS</h3>
             <div>
                 <label for="cardNumber">Card Number</label>
                 <input id="cardNumber" name="cardNumber" />
+                <h6 class="alert"></h6>
             </div>
             <section>
                 <div>
                     <label for="cardExpiry">Card Expiry(year)</label>
                     <input id="cardExpiry" name="cardNumber" />
+                    <h6 class="alert"></h6>
                 </div>
                 <div>
                     <label for="cvv">CVV</label>
                     <input id="cvv" name="cvv" />
+                    <h6 class="alert"></h6>
                 </div>
             </section>
             <button>COMPLETE PAYMENT</button>
         </form>
     </main>
+
+    <!-- START SCRIPT -->
+    <script src="./scripts/index.js"></script>
+    <!-- END SCRIPT -->
 </body>
 
 </html>
