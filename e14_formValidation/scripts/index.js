@@ -1,23 +1,7 @@
-const validateNotEmpty = (element) => {
-    if(/^.{1,}$/.test(element.value) == false) {
-        element.nextElementSibling.innerHTML = element.previousElementSibling.innerHTML + ' is required';
-        element.style.borderColor = '#A80000';
-        
-        return 0;
-    }
-    else {
-        element.style.borderColor = '#c2c2c2';
-        element.nextElementSibling.innerHTML = '';
-        return 1;
-    }
-}
-
-
 validateDetails = (element, regex) => {
     if(/^.{1,}$/.test(element.value) == false) {
         element.nextElementSibling.innerHTML = element.previousElementSibling.innerHTML + ' is required';
         element.style.borderColor = '#A80000';
-        
         return 0;
     }
     if(regex.test(element.value) == false) {
