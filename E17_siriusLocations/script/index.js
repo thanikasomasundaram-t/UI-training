@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".solutions-card").accordion();
+    $(".solutions").accordion();
     $.getJSON('./data/locations.json', (locations) => {
 
         locations.forEach((location, index) => {
@@ -49,25 +49,15 @@ $(document).ready(function() {
             $('.locations').append(row);
         });
 
-        const unSelect = () => {
-            $('.tab-detail-container').contents().css('display', 'none');
-            $('.tab-container').children().css('background-color', '#000');
-        }
+        $('.tab-card').click(function () {
+            $('.tab-card').each(function () {
+                $(this).removeClass('active');
+                $('.' + $(this).attr('id')).css('display', 'none');
+            });
+            $(this).addClass('active');
 
-        $('#about').click(()=> {
-            unSelect();
-            $('.about').css('display', 'flex');
-            $('#about').css('background-color', '#001B71');
-        });
-        $('#solutions').click(()=> {
-            unSelect();
-            $('.solutions').css('display', 'contents');
-            $('#solutions').css('background-color', '#001B71');
-        })
-        $('#locations').click(()=> {
-            unSelect();
-            $('.locations').css('display', 'flex');
-            $('#locations').css('background-color', '#001B71');
+            $('.' + $(this).attr('id')).css('display', $(this).attr('id') === 'solutions'? 'contents': 'flex');
+
         });
     });
 });

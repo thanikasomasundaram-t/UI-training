@@ -44,7 +44,7 @@ main {
     font-weight: 600;
 }
 
-#about {
+.active {
     background-color: #001B71;
 }
 
@@ -73,19 +73,13 @@ p {
     display: none;
 }
 
-.solutions h3 {
-    background-color: #818EB9;
-    font-size: 0.7em !important;
-    font-weight: 600;
-    color: #fff;
-    padding: 13px !important;
-}
-
 .solutions p {
-    font-size: 0.7em !important;
-    font-weight: 300;
     line-height: 1.5em;
 }
+
+/* .solutions div {
+    height: 150px !important;
+} */
 
 .locations {
     display: none;
