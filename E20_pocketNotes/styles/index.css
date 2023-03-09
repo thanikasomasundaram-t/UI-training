@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+#newNoteDisplay {
+  display: none;
+}
+
+#delete {
+  display: none;
+}
+
+button {
+  font-size: 1.1em;
+  text-decoration: none;
+  background-color: #B355B7;
+  color: #fff;
+  padding: 10px 35px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+header {
+  font-family: "IBM Plex Serif", serif;
+  background-color: #041D2E;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .logo i {
+  display: none;
+  font-size: 2em;
+}
+header h2 {
+  font-size: 1.7em;
+  font-weight: 400;
+}
+header h2 span {
+  font-weight: 600;
+}
+header .header-buttons {
+  width: 300px;
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+}
+header .header-buttons .delete-button {
+  background-color: #A80000;
+  color: #fff;
+}
+header .header-buttons .new-button {
+  background-color: #B355B7;
+  color: #fff;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  font-family: "Lato", sans-serif;
+  min-height: 100vh;
+}
+main .wrapper {
+  width: 80%;
+  font-size: 16px;
+}
+main .wrapper .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 28px 0;
+}
+main .wrapper .card-container .card {
+  display: flex;
+  flex-direction: column;
+  margin: 1.25%;
+  width: 22.5%;
+  height: 420px;
+  background-color: rgb(204, 204, 204);
+  padding: 20px 25px;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+main .wrapper .card-container .card .note-title {
+  font-size: 1.8em;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+main .wrapper .card-container .card .note-date {
+  font-size: 0.9em;
+  font-weight: 400;
+  padding: 12px 0;
+}
+main .wrapper .card-container .card .image-card {
+  height: 145px;
+}
+main .wrapper .card-container .card .image-card img {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+main .wrapper .card-container .card .note-content {
+  font-size: 0.9em;
+  font-weight: 300;
+  line-height: 1.5em;
+  padding-top: 12px;
+  overflow: hidden;
+}
+main .wrapper .note-details {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+}
+main .wrapper .note-details header {
+  justify-content: start;
+  width: 100%;
+  padding: 25px 17.5%;
+  margin-right: 10.5%;
+  gap: 25px;
+  font-family: "Lato", sans-serif;
+  background-color: transparent;
+}
+main .wrapper .note-details header .profile {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: #6B6B6B;
+}
+main .wrapper .note-details header h2 {
+  font-weight: 600;
+}
+main .wrapper .note-details header .note-date {
+  font-size: 0.9em;
+  padding-top: 5px;
+}
+main .wrapper .note-details .image-card {
+  height: 380px;
+  width: 100%;
+  padding: 0 17.5%;
+}
+main .wrapper .note-details .image-card img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+main .wrapper .note-details .note-content {
+  padding: 30px 17.5%;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.7em;
+}
+main .empty-page {
+  height: 100vh;
+  color: #fff;
+  display: none;
+  flex-direction: column;
+  padding-top: 120px;
+  align-items: center;
+  gap: 30px;
+}
+main .empty-page div {
+  width: 175px;
+}
+main .empty-page h2 {
+  font-weight: 400;
+}
+
+.screen-dimmer {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: rgba(4, 29, 46, 0.815);
+}
+
+.new-note {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 35%;
+  background-color: #000;
+  padding: 45px;
+}
+.new-note header {
+  font-family: "Lato", sans-serif;
+  padding: 5px 20px;
+}
+.new-note header span {
+  font-size: 2em;
+  font-weight: 400;
+  color: #6B6B6B;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.new-note form {
+  padding: 35px 0;
+}
+.new-note form div .alert {
+  color: #ba1414;
+  font-family: "Lato", sans-serif;
+  font-size: 0.8em;
+  font-weight: 300;
+  padding: 10px 15px;
+}
+.new-note form div .input {
+  width: 100%;
+  font-size: 1em;
+  font-weight: 300;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  overflow-wrap: break-word;
+  background: transparent;
+  border: none;
+  padding: 15px;
+}
+.new-note form div .title {
+  font-size: 1.8em;
+  font-weight: 400;
+}
+.new-note form div .input:focus {
+  outline: none;
+}
+.new-note form div .content {
+  resize: none;
+  height: 65vh;
+  width: 100%;
+}
+.new-note form .note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+}
+.new-note form .note-footer .note-color {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.new-note form .note-footer .note-color .tick {
+  width: 12px;
+  height: 23px;
+  border-radius: 0;
+  border: 2px solid black;
+  border-left: none;
+  border-top: none;
+  transform: rotate(45deg);
+  margin-bottom: 8px;
+}
+.new-note form .note-footer .note-color div {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-note form .note-footer button {
+  background-color: #B355B7;
+  color: #fff;
+}
+
+.delete-dialog {
+  position: fixed;
+  height: 220px;
+  width: 600px;
+  top: calc(50% - 110px);
+  left: calc(50% - 300px);
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  padding: 10px;
+}
+.delete-dialog header {
+  font-family: "Lato", sans-serif;
+  padding: 5px 20px;
+}
+.delete-dialog header span {
+  font-size: 2em;
+  font-weight: 400;
+  color: #6B6B6B;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.delete-dialog h3 {
+  font-weight: 300;
+  padding: 25px;
+}/*# sourceMappingURL=index.css.map */
