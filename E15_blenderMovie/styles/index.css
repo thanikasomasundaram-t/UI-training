@@ -177,12 +177,20 @@ video {
 /* START - FOOTER */
 footer {
     height: 70px;
-    padding: 20px 280px;
+    padding: 20px 96px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #222;
     color: #fff;
+}
+
+.footer-wrapper {
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 100%;
 }
 
 .copy-right {
@@ -202,7 +210,7 @@ footer {
         font-size: 13px;
     }
 
-    .wrapper {
+    .wrapper, .footer-wrapper {
         flex-direction: column;
     }
 
@@ -223,7 +231,7 @@ footer {
         height: 85px;
     }
 
-    footer > h5 {
+    .footer-wrapper > h5 {
         font-size: 1.4em;
     }
     .user-profile h6 {
