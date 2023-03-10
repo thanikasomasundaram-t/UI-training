@@ -221,7 +221,7 @@ main .empty-page h2 {
   font-family: "Lato", sans-serif;
   font-size: 0.8em;
   font-weight: 300;
-  padding: 10px 15px;
+  padding: 0 15px;
 }
 .new-note form div .input {
   width: 100%;
@@ -280,6 +280,18 @@ main .empty-page h2 {
 .new-note form .note-footer button {
   background-color: #B355B7;
   color: #fff;
+}
+
+.load-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  padding-bottom: 30px;
+}
+.load-more button {
+  padding: 20px 35px;
+  border-radius: 30px;
 }
 
 .delete-dialog {

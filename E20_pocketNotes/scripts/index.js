@@ -3,7 +3,7 @@ const months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 
 
 const tick = document.createElement('div');
 tick.className = 'tick';
-
+let counter = 0;
 
 const deleteSectionDetails = {
     deleteAll: {
@@ -23,61 +23,20 @@ const deleteSectionDetails = {
     }
 }
 
-const deleteElement = {
-    deleteOne: () => {
-        $('.delete-dialog').attr('id', 'deleteAll');
-        $('.delete-button').html('DELETE ALL').attr('id', 'deleteAll');
-        $('.new-button').html('NEW').attr('id', 'new');
-
-        $('#delete').css('display', 'none');
-        $('.note-details').css('display', 'none');
-        $('#newNoteDisplay').css('display', 'none');
-        $('.card-container').css('display', 'flex');
-    },
-    deleteAll: () => {
-
-        $('#delete').css('display', 'none');
-        $('.delete-button').css('display', 'none');
-        $('.card-container').html('');
-        $('.wrapper').css('display', 'none');
-        $('.empty-page').css('display', 'flex');
-    },
-    confirm: () => {
-        $('.delete-dialog').attr('id', 'deleteAll');
-        $('#delete').css('display', 'none');
-        $('#newNoteDisplay').css('display', 'none');
-        $('form #title').val('');
-        $('form #url').val('');
-        $('form #content').val('');
-
-    }
-}
-
 $(document).ready(function () {
     if (!localStorage.getItem('notes')) {
         localStorage.setItem('notes', JSON.stringify([]));
         $('.note-color > div:first-child').append(tick);
-
     }
     else {
         $('.note-color > div:first-child').append(tick);
         let notes = JSON.parse(localStorage.getItem('notes'));
-        notes.forEach(note => {
-            RenderNotes(note);
-        });
+        for(var index= 0; index < (notes.length > 10? 10: notes.length); index++) {
+            counter += 1;
+            RenderNotes(notes[index], false);
+        }
+        $('.load-more').css('display', counter < notes.length? 'flex' : 'none')
     }
-
-    // click new button in header
-    $('.new-button').click(function () {
-        $('#newNoteDisplay').css('display', 'contents');
-    });
-
-    // click delete button in header
-    $('.delete-button').click(function () {
-        RenderDeleteDetails();
-        $('#delete').css('display', 'contents');
-    });
-
 
     const alert = document.createElement('div');
     alert.className = 'alert';
@@ -88,7 +47,7 @@ $(document).ready(function () {
             $('form #title').before(alert);
             return false;
         }
-        if (/^[\w\n]{1,}$/.test($('form #content').val()) != true) {
+        if ($('form #content').val().length < 1) {
             $(alert).html("(Content should not be empty)");
             $('form #content').before(alert);
             return false;
@@ -98,71 +57,9 @@ $(document).ready(function () {
         return true;
     }
 
-    // New note section
-    $('.note-footer button').click(function (e) {
-        e.preventDefault();
-        if (Validate()) {
-            let note = {};
-            let notes = JSON.parse(localStorage.getItem('notes'));
-            note.id = notes.length;
-            note.title = $('form #title').val();
-            note.url = $('form #url').val();
-            note.content = $('form #content').val();
-            note.bgColor = $('.tick').parent().css('background-color');
-            let date = new Date();
-            note.date = months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
-            notes.push(note);
-            console.log("b" + notes);
-            // notes.push(note);
-            console.log(localStorage.setItem('notes', JSON.stringify(notes)));
-            $('.delete-button').css('display', 'inline-block')
-            $('#newNoteDisplay').css('display', 'none');
-            $('form #title').val('');
-            $('form #url').val('');
-            $('form #content').val('');
-            $('.wrapper').css('display', 'inherit');
-            $('.empty-page').css('display', 'none');
-            RenderNotes(note);
-        }
-    });
-
-
-    // select colors
-    $('.note-color > div').each(function (index) {
-        $(this).css('background-color', colors[index]);
-    });
-
-    // add tick
-    $('.note-color > div').click(function () {
-        $(this).append(tick);
-    })
-
-    const RenderDeleteDetails = () => {
-        const value = deleteSectionDetails[$('.delete-dialog').attr('id')];
-
-        $('.delete-dialog header h4').html(value.h4);
-        $('.delete-dialog h3').html(value.h3);
-        $('.delete-dialog button').html(value.button);
-
-
-        console.log(value);
-    }
-
-    // click close to close the new-note
-    $('.new-note header span').click(function () {
-        if ($('form #title').val() == '') {
-            $('#newNoteDisplay').css('display', 'none');
-        }
-        else {
-            $('.delete-dialog').attr('id', 'confirm');
-            RenderDeleteDetails();
-            $('#delete').css('display', 'contents');
-        }
-
-    });
 
     //note rendering
-    function RenderNotes(note) {
+    function RenderNotes(note, value) {
         const card = document.createElement('div');
         card.className = 'card';
         $(card).attr('id', note.id);
@@ -177,7 +74,6 @@ $(document).ready(function () {
         $(date).html(note.date);
 
         $(card).append(title, date);
-        console.log(note.url);
         if (note.url != '') {
             const imageDiv = document.createElement('div');
             imageDiv.className = 'image-card';
@@ -194,41 +90,202 @@ $(document).ready(function () {
         $(content).html(note.content);
 
         $(card).append(content);
-
-        console.log(card);
-        $('.card-container').prepend(card);
+        value
+            ? $('.card-container').prepend(card)
+            : $('.card-container').append(card)
+        
     };
 
-    //Delete section
-    $('.delete-dialog header span').click(function () {
-        $('#delete').css('display', 'none');
+    const DisplayEmptyPage = (value) =>
+        $('.empty-page').css('display', value ? 'flex' : 'none');
+        counter = 0;
+
+    const DisplayWrapperPage = (value) =>
+        $('.wrapper').css('display', value ? 'block' : 'none');
+
+    const DisplayNewNotePage = (value) =>
+        $('#newNoteDisplay').css('display', value ? 'contents' : 'none');
+
+    const DisplayLoadMore = () => {
+        $('.load-more').css('display', value? 'flex': 'none');
+
+    }
+    const RemoveInputValues = (value) => {
+        $('form #title').val('');
+        $('form #url').val('');
+        $('form #content').val('');
+    }
+
+    const DisplayDeletePage = (value) => {
+        $('#delete').css('display', value ? 'flex' : 'none');
+    }
+
+    const DisplayDeleteButton = (value) => {
+        $('.delete-button').css('display', value ? 'block' : 'none');
+    }
+
+    const DisplayBackIcon = (value) => {
+        $('i').css('display', value ? 'block' : 'none');
+    }
+    const addInputNotes = () => {
+        let note = {};
+        note.id = Date.now();
+        note.title = $('form #title').val();
+        note.url = $('form #url').val();
+        note.content = $('form #content').val();
+        note.bgColor = $('.tick').parent().css('background-color');
+        let date = new Date();
+        note.date = months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+
+        return note;
+    }
+
+    const RenderDeleteDetails = (index) => {
+        const value = deleteSectionDetails[index];
+        $('.delete-dialog header h4').html(value.h4);
+        $('.delete-dialog h3').html(value.h3);
+        $('.delete-dialog button').html(value.button);
+    }
+
+    const AddDeleteId = (value) => {
+        $('.delete-dialog button').attr('id', value);
+    }
+    const Togglewrapper = (value) => {
+        $('.card-container').css('display', value ? 'none' : 'flex');
+        $('.note-details').css('display', value ? 'flex' : 'none');
+    }
+
+    const deleteAction = {
+        deleteOneId: () => {
+            DisplayDeletePage(false);
+            Togglewrapper(false);
+            DisplayBackIcon(false);
+            $('.new-button').html('NEW').attr('id', 'new');
+            $('.delete-button').html('DELETE ALL').attr('id', 'deleteAll');
+        },
+        deleteAllId: () => {
+            // localStorage.setItem('notes', JSON.stringify([]));
+            $('.card-container').html('');
+            DisplayEmptyPage(true);
+            DisplayWrapperPage(false);
+            DisplayDeleteButton(false);
+            DisplayDeletePage(false);
+        },
+
+        confirmId: () => {
+            DisplayDeletePage(false);
+            DisplayNewNotePage(false);
+            RemoveInputValues();
+        }
+    }
+    // click new button in header
+    $('.new-button').click(function () {
+        DisplayNewNotePage(true);
+        // if ($(this).attr('id') == 'edit') {
+        //     let currentTarget = JSON.parse(localStorage.getItem('notes'))[$('.note-details').attr('id')];
+        //     $('form #title').val(currentTarget.title);
+        //     $('form #url').val(currentTarget.url);
+        //     $('form #content').val(currentTarget.content);
+        //     $('.note-footer button').html('SAVE').attr('id', 'save');
+        // }
+    });
+
+    // Add or save button
+    $('.note-footer button').click(function (e) {
+        e.preventDefault();
+        if (Validate()) {
+            let note = addInputNotes();
+            let notes = JSON.parse(localStorage.getItem('notes'));
+            notes.unshift(note);
+            // if ($('.note-footer button').attr('id') == 'save') {
+            //     let index = $('.note-details').attr('id');
+            //     let currentTarget = notes[index];
+            //     notes = notes.splice(index, 1);
+            // }
+            localStorage.setItem('notes', JSON.stringify(notes));
+            DisplayNewNotePage(false);
+            DisplayWrapperPage(true);
+            DisplayEmptyPage(false);
+            DisplayDeleteButton(true);
+            RemoveInputValues();
+            // Togglewrapper(false);
+            RenderNotes(note, true);
+        }
+    });
+
+    // click delete button in header
+    $('.delete-button').click(function () {
+        if ($(this).attr('id') == 'deleteAll') {
+            RenderDeleteDetails('deleteAll');
+            AddDeleteId('deleteAllId');
+            DisplayDeletePage(true);
+        }
+        else if ($(this).attr('id') == 'deleteOne') {
+            RenderDeleteDetails('deleteOne');
+            AddDeleteId('deleteOneId');
+            DisplayDeletePage(true);
+        }
     });
 
     $('.delete-dialog button').click(function () {
-        console.log($('.delete-dialog').attr('id'));
-
-        deleteElement[$('.delete-dialog').attr('id')]();
+        deleteAction[$(this).attr('id')]();
     });
 
     //note-detail
-    $('.card').click(function(e) {
-        console.log("hi")
-        // const index = $(e.target).attr('id');
-        $('.card-container').css('display', 'none');
-        $('.note-details').css('display', 'flex');
-        $('i').css('display', 'block');
-        $('.delete-button').html('DELETE').attr('id', 'deleteOne');
-        $('.delete-dialog').attr('id', 'deleteOne');
-        $('.new-button').html('EDIT').attr('id', 'edit');
+    $('.card-container').on('click', '.card', function () {
 
+        Togglewrapper(true);
+        DisplayBackIcon(true);
+        $('.delete-button').html('DELETE').attr('id', 'deleteOne');;
+        $('.new-button').html('EDIT').attr('id', 'edit');
     })
 
-    $('i').click(function() {
-        $('.card-container').css('display', 'flex');
-        $('.note-details').css('display', 'none');
-        $('i').css('display', 'none');
+    // select colors
+    $('.note-color > div').each(function (index) {
+        $(this).css('background-color', colors[index]);
+    });
+
+    // add tick
+    $('.note-color > div').click(function () {
+        $(this).append(tick);
+    })
+
+    // click close to close the new-note
+    $('.new-note header span').click(function () {
+        if ($('form #title').val() == '' && $('form #content').val() == '') {
+            DisplayNewNotePage(false);
+        }
+        else {
+            RenderDeleteDetails('confirm');
+            AddDeleteId('confirmId');
+            DisplayDeletePage(true);
+        }
+    });
+
+
+    //Delete section
+    $('.delete-dialog header span').click(function () {
+        DisplayDeletePage(false);
+    });
+
+    $('i').click(function () {
+        Togglewrapper(false);
+        DisplayBackIcon(false);
         $('.new-button').html('NEW').attr('id', 'new');
         $('.delete-button').html('DELETE ALL').attr('id', 'deleteAll');
-    })
+    });
 
+    $('.load-more button').click(function() {
+        const notes = JSON.parse(localStorage.getItem('notes'));
+        let conditionResult = notes.length > (counter+10)? counter+10: notes.length;
+
+        for(index = counter; index < conditionResult; index++) {
+            counter += 1;
+            console.log(index)
+            RenderNotes(notes[index], false);
+        };
+
+        value = counter >= notes.length ? false: true
+        DisplayLoadMore(value);
+    });
 });
