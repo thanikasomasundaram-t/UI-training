@@ -1,7 +1,6 @@
 
-// VALIDATE DETAILS
-const ValidateDetails = () => {
-    const userList = [
+const bank = {
+    userList : [
         {
             accountNo: 1001,
             cardNumber: 1001,
@@ -38,60 +37,60 @@ const ValidateDetails = () => {
             pin: 12345,
             accountBalance: 1000,
         },
-    ];
+    ],
+    ValidateDetails: () => {
 
-    // VALIDATE CARD NUMBER
-    const validateCardNumber = () => {
-        const cardNumber = prompt("Enter Card Number");
-        for (user of userList) {
-            if (cardNumber == user.cardNumber) {
-                return user;
+        // VALIDATE CARD NUMBER
+        const validateCardNumber = () => {
+            const cardNumber = prompt("Enter Card Number");
+            for (user of bank.userList) {
+                if (cardNumber == user.cardNumber) {
+                    return user;
+                }
             }
-        }
-        alert("Invalid card number");
-        return 0;
-    }
-
-    // VALIDATE PIN NUMBER
-    const validatePin = (user) => {
-        const pin = prompt("Enter pin");
-        if (pin != user.pin) {
-            alert("Invalid pin");
+            alert("Invalid card number");
             return 0;
         }
-        return 1;
-    }
-
-    return () => {
-        const user = validateCardNumber();
-        if (user) {
-            validate = validatePin(user);
-            if (validate) {
-                return user;
+    
+        // VALIDATE PIN NUMBER
+        const validatePin = (user) => {
+            const pin = prompt("Enter pin");
+            if (pin != user.pin) {
+                alert("Invalid pin");
+                return 0;
             }
+            return 1;
         }
-    };
-};
+    
+        return () => {
+            const user = validateCardNumber();
+            if (user) {
+                validate = validatePin(user);
+                if (validate) {
+                    return user;
+                }
+            }
+        };
+    },
 
+    WithdrawAmount: (user) => {
+        console.log(user);
+        const amount = parseInt(prompt("Enter withdrawal amount"));
+        if (user.accountBalance >= amount) {
+            user.accountBalance -= amount;
+            alert("Withdrawed amount - " + amount + "\nCurrent Balance - " + user.accountBalance);
+        }
+        else {
+            alert("Insufficient Balance");
+        }
+    }, 
 
-// WITHDRAW AMOUNT
-const WithdrawAmount = (user) => {
-    console.log(user);
-    const amount = parseInt(prompt("Enter withdrawal amount"));
-    if (user.accountBalance >= amount) {
-        user.accountBalance -= amount;
-        alert("Withdrawed amount - " + amount + "\nCurrent Balance - " + user.accountBalance);
+    AddAmount: (user) => {
+        const amount = parseInt(prompt("Enter deposit amount"));
+        user.accountBalance += amount;
+        alert("Added amount - " + amount + "\nCurrent Balance - " + user.accountBalance);
     }
-    else {
-        alert("Insufficient Balance");
-    }
-};
 
-// ADD AMOUNT
-const AddAmount = (user) => {
-    const amount = parseInt(prompt("Enter deposit amount"));
-    user.accountBalance += amount;
-    alert("Added amount - " + amount + "\nCurrent Balance - " + user.accountBalance);
 }
 
 // USER CHOOSE ATM OR CDM
@@ -102,17 +101,17 @@ alert("Redirecting to " + userChoice);
 
 switch (userChoice) {
     case 'atm':
-        var user = ValidateDetails()();
+        var user = bank.ValidateDetails()();
         console.log(user)
         if (user) {
-            WithdrawAmount(user);
+            bank.WithdrawAmount(user);
         }
         break;
 
     case 'cdm':
-        var user = ValidateDetails()();
+        var user = bank.ValidateDetails()();
         if (user) {
-            AddAmount(user);
+            bank.AddAmount(user);
         }
 }
 
