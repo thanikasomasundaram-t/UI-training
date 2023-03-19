@@ -185,7 +185,6 @@ footer {
     color: #fff;
 }
 
-<<<<<<< Updated upstream
 .footer-wrapper {
     max-width: 1300px;
     display: flex;
@@ -194,7 +193,6 @@ footer {
     flex-basis: 100%;
 }
 
-=======
 .header-wrapper {
     max-width: 1300px;
     display: flex;
@@ -202,7 +200,6 @@ footer {
     flex-basis: 100%;
     margin: 0;
 }
->>>>>>> Stashed changes
 .copy-right {
     display: flex;
     align-items: center;
