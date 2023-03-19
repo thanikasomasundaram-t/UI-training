@@ -42,6 +42,7 @@ main {
     border-radius: 5px 5px 0 0;
     font-size: 0.75em;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .active {
